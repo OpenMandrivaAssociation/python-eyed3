@@ -1,5 +1,5 @@
 %define name python-eyed3
-%define version 0.6.12
+%define version 0.6.13
 %define oname eyeD3
 %define release %mkrel 1
 
