@@ -11,6 +11,7 @@ Source0: http://eyed3.nicfit.net/releases/%{oname}-%{version}.tar.bz2
 License: GPL
 Group: Development/Python
 Url: http://eyed3.nicfit.net/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 BuildArch: noarch
 
