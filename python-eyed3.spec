@@ -1,7 +1,7 @@
 %define name python-eyed3
 %define version 0.6.16
 %define oname eyeD3
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: ID3 tag module
 Name: %{name}
@@ -12,7 +12,7 @@ License: GPL
 Group: Development/Python
 Url: http://eyed3.nicfit.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: python-devel
+%py_requires -d
 BuildArch: noarch
 
 %description
