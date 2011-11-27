@@ -1,7 +1,7 @@
 %define name python-eyed3
-%define version 0.6.17
+%define version 0.6.18
 %define oname eyeD3
-%define release %mkrel 4
+%define release %mkrel 1
 
 Summary: ID3 tag module
 Name: %{name}
