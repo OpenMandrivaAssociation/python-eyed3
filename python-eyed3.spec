@@ -1,18 +1,14 @@
-%define name python-eyed3
-%define version 0.6.18
 %define oname eyeD3
-%define release %mkrel 1
 
 Summary: ID3 tag module
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://eyed3.nicfit.net/releases/%{oname}-%{version}.tar.gz
+Name:    python-eyed3
+Version: 0.7.3
+Release: 1
+Source0: http://eyed3.nicfit.net/releases/eyeD3-%{version}.tgz
 License: GPL
 Group: Development/Python
 Url: http://eyed3.nicfit.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-%py_requires -d
+BuildRequires: python-devel
 BuildArch: noarch
 
 %description
@@ -25,24 +21,12 @@ v1.0/v1.1 and v2.3/v2.4.
 %setup -q -n %oname-%version
 
 %build
-%configure2_5x
-%make
+python setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT installed-docs
-%makeinstall
-mv %buildroot%_datadir/doc/%oname-%version installed-docs
+PYTHONDONTWRITEBYTECODE= %python setup.py install --root=%{buildroot} --record=FILE_LIST
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%files
-%defattr(-,root,root)
-%doc installed-docs/*
-%py_puresitedir/%oname
-%py_puresitedir/*.egg-info
-%_bindir/%oname
-%_mandir/man1/%oname.1*
+%files -f FILE_LIST
 
 
 
@@ -126,4 +110,5 @@ rm -rf $RPM_BUILD_ROOT
 
 * Fri Aug 12 2005 Götz Waschk <waschk@mandriva.org> 0.6.6-1mdk
 - initial package
+
 
