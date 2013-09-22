@@ -21,13 +21,12 @@ v1.0/v1.1 and v2.3/v2.4.
 %setup -q -n %oname-%version
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
-PYTHONDONTWRITEBYTECODE= %python setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root=%{buildroot} --record=FILE_LIST
 
 %files -f FILE_LIST
-
 
 
 
