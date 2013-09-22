@@ -9,6 +9,7 @@ License: GPL
 Group: Development/Python
 Url: http://eyed3.nicfit.net/
 BuildRequires: python-devel
+BuildRequires: python-distribute
 BuildArch: noarch
 
 %description
@@ -25,6 +26,7 @@ v1.0/v1.1 and v2.3/v2.4.
 
 %install
 PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root=%{buildroot} --record=FILE_LIST
+sed -i '/egg-info$/d' FILE_LIST
 
 %files -f FILE_LIST
 
