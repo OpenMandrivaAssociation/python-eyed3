@@ -2,7 +2,7 @@
 
 Summary: ID3 tag module
 Name:    python-eyed3
-Version: 0.7.3
+Version: 0.7.4
 Release: 1
 Source0: http://eyed3.nicfit.net/releases/eyeD3-%{version}.tgz
 License: GPL
@@ -22,10 +22,10 @@ v1.0/v1.1 and v2.3/v2.4.
 %setup -q -n %oname-%version
 
 %build
-%{__python} setup.py build
+python setup.py build
 
 %install
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot} --record=FILE_LIST
 sed -i '/egg-info$/d' FILE_LIST
 
 %files -f FILE_LIST
@@ -111,5 +111,6 @@ sed -i '/egg-info$/d' FILE_LIST
 
 * Fri Aug 12 2005 Götz Waschk <waschk@mandriva.org> 0.6.6-1mdk
 - initial package
+
 
 
