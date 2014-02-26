@@ -9,12 +9,14 @@ License: GPL
 Group: Development/Python
 Url: http://eyed3.nicfit.net/
 BuildRequires: python-devel
+BuildRequires: python-magic
 BuildRequires: python-distribute
 BuildArch: noarch
 
 # Maybe it would be better to python-magic package (built from 'file')
 # to provides pythonegg?
-%define __noautoreq 'pythonegg(python-magic)'
+# on the other hand, eyed3 seems to want magic from pypi.org...
+%define __noautoreq 'pythonegg\\(python-magic\\)'
 Requires: python-magic
 
 %description
