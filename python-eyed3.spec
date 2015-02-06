@@ -3,7 +3,7 @@
 Summary: ID3 tag module
 Name:    python-eyed3
 Version: 0.7.4
-Release: 2
+Release: 3
 Source0: http://eyed3.nicfit.net/releases/eyeD3-%{version}.tgz
 License: GPL
 Group: Development/Python
