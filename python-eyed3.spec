@@ -7,7 +7,7 @@ Release: 3
 Source0: http://eyed3.nicfit.net/releases/eyeD3-%{version}.tgz
 License: GPL
 Group: Development/Python
-Url: http://eyed3.nicfit.net/
+Url: https://eyed3.nicfit.net/
 BuildRequires: python-devel
 BuildRequires: python-magic
 BuildRequires: python-distribute
